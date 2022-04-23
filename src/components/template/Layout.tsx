@@ -2,7 +2,7 @@ import MenuLateral from "../template/MenuLateral"
 import Cabecalho from "../template/Cabecalho"
 import Conteudo from "../template/Conteudo"
 import useAppData from "../../data/hook/useAppData"
-import forcarAuth from "../../functions/ForcarAuth"
+import forcarAuth from "../../functions/forcarAuth"
 //import ForcarAuth from "../auth/ForcarAuth"
 
 interface LayoutProps{
