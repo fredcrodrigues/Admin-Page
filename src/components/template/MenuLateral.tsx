@@ -1,7 +1,10 @@
 import MenuItem from "../template/MenuItem"
 import Logo from "../template/Logo"
 import { IconeHome, IconeAjustes, IconeNotificacao, IconeSair  } from "../Icone/"
+import useAuth from "../../data/hook/useAuth"
 export default function MenuLateral(){
+
+    const {logout} = useAuth()
 
     return (
         <aside className={`
@@ -23,7 +26,7 @@ export default function MenuLateral(){
                 <MenuItem url="/notificacoes" texto="Notificações" icone={IconeNotificacao}/>
             </ul>
             <ul>
-                <MenuItem onClick={() => console.log('test')} 
+                <MenuItem onClick={logout} 
                 classe={`
                 text-red-600  dark:text-red-400 
                 dark:hover:bg-gray-400   dark:hover:text-white

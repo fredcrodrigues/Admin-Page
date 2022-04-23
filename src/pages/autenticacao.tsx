@@ -6,7 +6,7 @@ import useAuth from "../data/hook/useAuth"
 
 export default function Altenticacao(){
 
-    const {usuario, loginGoogle} = useAuth()
+    const {cadastrar, login,  loginGoogle} = useAuth()
 
     const [erro, setErro] = useState(null)
     const [modo, setModo] = useState<'login' | 'cadastrar'>('login')
@@ -18,12 +18,20 @@ export default function Altenticacao(){
         setTimeout(() => setErro(null), tempoEmSegundos * 1000)
 
     }
-    function submeter(){
-        if(modo == 'login'){
-            exibirErro('Erro de login', 5)
-        }else{
-            exibirErro('Erro de Cadastro', 5)
-        }
+   async function submeter(){
+     
+            try{
+                if(modo == 'login'){
+                    await login(email, senha)
+                }else{
+                    await cadastrar(email, senha)
+                }
+            }catch(e){
+                exibirErro(e?.message ?? 'Erro desconhecido!', 5)
+               
+
+            }
+       
     }
 
     return (
