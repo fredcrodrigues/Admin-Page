@@ -1,4 +1,4 @@
-## TEMPLATE ADMIN REAC-NEXT-JS
+## Template Admin
 
 This is first project with react and next-js of authentication with firebase and typescript. The project involves a screen of login and admin. The User need register  your datas for acess the page of content. 
 
